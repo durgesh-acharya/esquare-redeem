@@ -47,10 +47,7 @@ class _ProdDetailState extends State<ProdDetail> {
         return jdata.map((json) => ProdImg.fromJson(json)).toList();
       
       }else{
-        setState(() {
-          nodata = true;
-          loadervisible = false;
-        });
+       
       }
     }on SocketException{
       print("socket");
@@ -84,10 +81,7 @@ class _ProdDetailState extends State<ProdDetail> {
       print(productlist[0][1]);
       print(productlist[0]);
       }else{
-        setState(() {
-          // nodata = true;
-          // loadervisible = false;
-        });
+       
       }
     }on SocketException{
       print("socket");
@@ -119,10 +113,7 @@ Future getsimilarProduct(int prodid,int cateid, int subcateid)async{
         return jdata.map((json) => Prod.fromJson(json)).toList();
       
       }else{
-        setState(() {
-          spnodata = true;
-          sploadervisible = false;
-        });
+       
       }
     }on SocketException{
       print("socket");

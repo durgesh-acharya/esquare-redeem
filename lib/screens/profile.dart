@@ -55,10 +55,11 @@ Future getUserData(String mobile)async{
         var usermobile = jdata[0]["user_mobile"];
         var usercity = jdata[0]["user_city"];
         var userupiid = jdata[0]["user_duid"];
+        var usershop = jdata[0]["user_shop"];
         print(username);
       // print(productName);
       // print(productDescription);
-      List user = [username,usermobile,usercity,userupiid];
+      List user = [username,usermobile,usercity,userupiid,usershop];
       print(user[0]);
       setState(() {
         userList.add(user);
@@ -121,6 +122,16 @@ Future getUserData(String mobile)async{
                 ],
               ),
             ),
+                Padding(
+              padding: const EdgeInsets.only(left :25.0,right: 25.0,top: 16.0,bottom: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Shop : " ,style: GoogleFonts.secularOne(color: Colors.green,fontSize: 16.0,fontWeight: FontWeight.bold),),
+                  Text(userList.length == 0 ? "" : userList[0][4],style: GoogleFonts.secularOne(color: Colors.green,fontSize: 16.0,fontWeight: FontWeight.bold))
+                ],
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.only(left :25.0,right: 25.0,top: 16.0,bottom: 16.0),
               child: Row(
@@ -131,6 +142,7 @@ Future getUserData(String mobile)async{
                 ],
               ),
             ),
+            
 
             Padding(
               padding: const EdgeInsets.only(left :25.0,right: 25.0,top: 16.0,bottom: 16.0),

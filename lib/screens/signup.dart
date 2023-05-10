@@ -22,15 +22,17 @@ class _SignupScreenState extends State<SignupScreen> {
   TextEditingController _name = TextEditingController();
   TextEditingController _city = TextEditingController();
   TextEditingController _upiid = TextEditingController();
+  TextEditingController _shop = TextEditingController();
 
   //add user method
-  Future adduer(String usermobile, String username,String usercity,String userduid,int userstatus)async{
+  Future adduer(String usermobile, String username,String usercity,String userduid,int userstatus, String usershop)async{
     Map usermap = {
       "usermobile": usermobile,
       "username": username,
      "usercity":  usercity,
     "userduid": userduid,
-    "userstatus" : userstatus
+    "userstatus" : userstatus,
+    "usershop" : usershop
     };
     String url ="http://52.66.119.148/api/user/create";
     Map<String,String> headers = {'Content-Type': 'application/json'};
@@ -124,6 +126,23 @@ class _SignupScreenState extends State<SignupScreen> {
       fillColor: Colors.white70),
 ),
           ),
+          //enter shopname
+             Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: _shop,
+  decoration: InputDecoration(
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10.0),
+        
+      ),
+      filled: true,
+      
+      hintStyle: TextStyle(color: Colors.grey[800]),
+      hintText: "Enter your Shop Name",
+      fillColor: Colors.white70),
+),
+          ),
           // Enter your city
            Padding(
             padding: const EdgeInsets.all(8.0),
@@ -167,10 +186,10 @@ class _SignupScreenState extends State<SignupScreen> {
           child: GestureDetector(
            onTap: (() async{
             
-              if(_name.text.length == 0 || _city.text.length == 0 || _upiid.text.length == 0){
+              if(_name.text.length == 0 || _city.text.length == 0 || _upiid.text.length == 0 || _shop.text.length == 0){
                 emptybox();
               }else{
-                adduer(widget.mobile, _name.text, _city.text, _upiid.text,1);
+                adduer(widget.mobile, _name.text, _city.text, _upiid.text,1,_shop.text);
               }
             
            }),

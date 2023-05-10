@@ -41,10 +41,7 @@ try{
         return jdata.map((json) => Prod.fromJson(json)).toList();
       
       }else{
-        setState(() {
-          nodata = true;
-          loadervisible = false;
-        });
+       
       }
     }on SocketException{
       print("socket");

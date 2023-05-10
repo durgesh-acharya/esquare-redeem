@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "585155872515-egvp4mt3r3e8mtjqbn5td198811fq56g.apps.googleusercontent.com",
+          "client_id": "585155872515-g6i4f9ithc8vb0fetvtssqi0d257avpm.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.esquare.redeem",
-            "certificate_hash": "0af7b99badd559c958e971aa75be4849b658c9f7"
+            "certificate_hash": "37028d2114b364f54f3e26d9c61936c6e891e0e5"
           }
         },
         {

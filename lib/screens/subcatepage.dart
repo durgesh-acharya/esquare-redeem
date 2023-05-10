@@ -41,10 +41,7 @@ class _SubCatePageState extends State<SubCatePage> {
         return jdata.map((json) => SubCate.fromJson(json)).toList();
       
       }else{
-        setState(() {
-          nodata = true;
-          loadervisible = false;
-        });
+       
       }
     }on SocketException{
       print("socket");
